@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-const btnSubmit = document.querySelector("#button-submit");
+const form = document.querySelector("form");
 const bookshelf = document.querySelector(".bookshelf");
 
 function Book(title, author, pages, progress) {
@@ -18,7 +18,7 @@ const Book3 = new Book("Don Quixote", "Miguel de Cervantes", 1077, "unread");
 myLibrary.push(Book1, Book2, Book3);
 
 function addBookToLibrary() {
-	btnSubmit.addEventListener("click", (e) => {
+	form.addEventListener("submit", (e) => {
 		const Books = new Book(
 			document.querySelector("#title").value,
 			document.querySelector("#author").value,
@@ -30,9 +30,7 @@ function addBookToLibrary() {
 		document.querySelector("form").reset();
 		resetShelf();
 		displayBooks();
-
-		console.log(myLibrary);
-
+		toggleModal();
 		e.preventDefault();
 	});
 }
@@ -45,7 +43,6 @@ function resetShelf() {
 
 function displayBooks() {
 	for (i = 0; i < myLibrary.length; i++) {
-		console.log(myLibrary[i].title);
 		initializeBook(
 			myLibrary[i].title,
 			myLibrary[i].author,
@@ -95,9 +92,7 @@ function initializeBook(title, author, pages, progress) {
 	});
 
 	btnRemove.addEventListener("click", (e) => {
-		console.log(e.target.dataset.bookNo);
-		console.log(myLibrary.splice(e.target.dataset.bookNo, 1));
-
+		myLibrary.splice(e.target.dataset.bookNo, 1);
 		resetShelf();
 		displayBooks();
 	});
@@ -122,4 +117,3 @@ function windowOnClick(event) {
 
 trigger.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
-btnSubmit.addEventListener("click", toggleModal);
