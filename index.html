@@ -16,34 +16,30 @@
         </header>
         <main>
             <button id="trigger" class="red-button modal-trigger">Add new Book</button>
-
             <div class="bookshelf">
-
             </div>
-
             <div class="modal" id="modal">
                 <div class="modal-content">
                     <form>
                         <span>Add new book</span>
-                        <input type="text" name="title" id="title" placeholder="title">
-                        <input type="text" name="author" id="author" placeholder="author">
-                        <input type="number" name="pages" id="pages" placeholder="pages">
+                        <input type="text" name="title" id="title" placeholder="title" required>
+                        <input type="text" name="author" id="author" placeholder="author" required>
+                        <input type="number" name="pages" id="pages" placeholder="pages" required>
                         <div class="modal-footer">
-
                             <div class="radio-container">
-                                <input type="radio" id="read" name="progress" value="read">
-                                <label for="read">read</label><br>
-                                <input type="radio" id="unread" name="progress" value="unread">
+                                <input type="radio" id="progress" name="progress" value="read" checked>
+                                <label for="read">read</label>
+                                <input type="radio" id="progress" name="progress" value="unread">
                                 <label for="unread">unread</label>
                             </div>
-                            <button id="button-submit" class="red-button">Submit</button>
+                            <button type="submit" id="button-submit" class="red-button">Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
         </main>
         <footer>
-            <span>by 21ance</span>
+            <span> <a href="https://github.com/21ance/Library">by 21ance</a></span>
         </footer>
     </div>
 </body>

@@ -6,8 +6,13 @@
 :root {
     --primary-color: #292524;
     --secondary-color: #f5f5f4;
+    --secondary-color-lighter: #d6d3d1;
+    --yellow: #facc15;
+    --yellow-light: #fef08a;
     --red: #7c2d12;
+    --red-light: #b91c1c;
     --white-font: #FFF;
+    --black-font: #292524;
 }
 
 * {
@@ -36,18 +41,13 @@ h1 {
 
 main {
     background-color: var(--secondary-color);
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .modal-trigger {
-    /* width: 100px;
-    height: 50px; */
     padding: 10px 20px;
     margin: 10px;
 }
 
-/* modal css */
 .modal {
     position: fixed;
     left: 0;
@@ -71,8 +71,6 @@ main {
 .show-modal {
     visibility: visible;
 }
-
-/*  */
 
 form {
     display: flex;
@@ -127,14 +125,26 @@ form input {
     background-color: var(--primary-color);
     border-radius: 8px;
     color: var(--white-font);
-    font-size: 2.2rem;
     text-align: center;
     align-content: center;
     gap: 15px;
     padding: 10px;
 }
 
+.read-book {
+    background-color: var(--yellow);
+}
+
 .book-info button {
+    font-size: 1.5rem;
+    padding: 8px 0px;
+}
+
+.book-info span:nth-child(1) {
+    font-size: 2rem;
+}
+
+.book-info span:nth-child(2) {
     font-size: 1.5rem;
 }
 
@@ -145,6 +155,15 @@ footer {
     color: var(--white-font);
 }
 
+footer a {
+    color: var(--white-font);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--secondary-color-lighter);
+}
+
 .red-button {
     background-color: var(--red);
     color: var(--white-font);
@@ -152,5 +171,13 @@ footer {
 }
 
 .red-button:hover {
-    background-color: var(--primary-color);
+    background-color: var(--red-light);
+}
+
+.read-book:hover {
+    background-color: var(--yellow-light);
+}
+
+button:hover {
+    background-color: var(--secondary-color-lighter)
 }
